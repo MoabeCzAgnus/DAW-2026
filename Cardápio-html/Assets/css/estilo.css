@@ -26,20 +26,18 @@ body {
 
 .container, 
 main {
-    width: min(100% - 3rem, 1920px);
+    width: min(100% - 2rem, 1200px);
     margin-inline: auto;
 }
 
 
 /* CABEÇALHO */
 
-Body > header {
+body > header {
     background-color: #ffffff;
     position:sticky;
-    top:5rem;
-    z-index: 10;
-
-
+    top:0;
+    z-index: 20;
 }
 
 header .container {
@@ -148,7 +146,6 @@ main > section {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: start;
 
 }
@@ -276,10 +273,6 @@ footer {
     font-weight: 300;
     margin-top: 2rem;
     padding-block: 1.5rem;
-
-    width: 1920px;
-    max-width: 100%;
-    margin-inline: auto;
 }
 
 footer .container {
