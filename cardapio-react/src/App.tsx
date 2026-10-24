@@ -1,161 +1,150 @@
+import { Footer } from "./components/layout/footer"
 import { Header } from "./components/layout/header"
+import { NavigationBar } from "./components/layout/navegation"
+import { categories } from "./data/categorias"
 
 function App() {
-
+  function handleSelectCategory(alias: string) {
+    alert('Categoria:'+alias)
+  }
   return (
     <>
-      <Header />
+      <Header/>
 
-      <nav>
-        <ul className="container">
-          <li><a href="#" className="active">Todos</a></li>
-          <li><a href="#">Lanches</a></li>
-          <li><a href="#">Porções</a></li>
-          <li><a href="#">Bebidas</a></li>
-          <li><a href="#">Sobremesas</a></li>
-        </ul>
-      </nav>
+      <NavigationBar categories={categories}
+      activeCategory="todos"
+      onSelectCategory={handleSelectCategory}
+      />
 
       <main>
         <section>
           <header>
             <h2>Produtos</h2>
-            <p>Categoria <span id="selected-category">Todos</span></p>
+            <p>Categoria <span id="selected-category">Todos</span>: 10 itens</p>
           </header>
 
           <article>
             <figure>
-              <img src="./assets/img/burger.png" alt="Burguer" />
+              <img src="./Assets/Img/burger.png"/>
               <figcaption>Lanches</figcaption>
             </figure>
             <h3>Burguer</h3>
-            <p>Pão Brioche, hamburguer 160g, queijo prato e molho da casa.</p>
-            <p>R$22</p>
+            <p>Pão brioche, hambúrguer 160g, queijo prato e molho da casa.</p>
+            <p>R$ 22,00</p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/burger-bacon.png" alt="Burguer Bacon" />
+              <img src="./Assets/Img/burger-bacon.png"/>
               <figcaption>Lanches</figcaption>
             </figure>
-            <h3>Burguer Bacon</h3>
-            <p>Hamburgueres de 160g, cheddar, bacon e cebola</p>
-            <p>R$29</p>
+            <h3>Bacon Burger</h3>
+            <p>Pão brioche, hambúrguer 160g, bacon, queijo cheddar e molho da casa.</p>
+            <p><strong>R$ 25,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/burger-double.png" alt="Burguer Duplo" />
+              <img src="./Assets/Img/burger-double.png"/>
               <figcaption>Lanches</figcaption>
             </figure>
-            <h3>Burguer Duplo</h3>
-            <p>Dois Hamburgueres de 160g, cheddar, bacon e cebola</p>
-            <p>R$25</p>
+            <h3>Duplo Burguer</h3>
+            <p>Dois hambúrgueres de 160g cada, cheddar, bacon e cebola caramelizada.</p>
+            <p><strong>R$ 29,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/batata-rustica.png" alt="Batata Rustica" />
-              <figcaption>Lanches</figcaption>
+              <img src="./Assets/Img/batata-rustica.png"/>
+              <figcaption>Porções</figcaption>
             </figure>
-            <h3>Batata Rustica</h3>
-            <p>Porção de batata com alecrim, parmesão e maionese</p>
-            <p>R$10</p>
+            <h3>Batata Rústica</h3>
+            <p>Porção de batata com alecrim, parmesao e maionese verde.</p>
+            <p><strong>R$ 18,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/batata-tradicional.png" alt="Batata Tradicional" />
-              <figcaption>Lanches</figcaption>
+              <img src="./Assets/Img/batata-tradicional.png"/>
+              <figcaption>Porções</figcaption>
             </figure>
             <h3>Batata Tradicional</h3>
-            <p>Porção de batata com alecrim, parmesão e maionese</p>
-            <p>R$10</p>
+            <p>Porção de batata e maionese verde.</p>
+            <p><strong>R$ 15,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/agua.png" alt="Agua" />
-              <figcaption>Bebidas</figcaption>
+              <img src="./Assets/Img/agua.png"/>
+              <figcaption>Bebida</figcaption>
             </figure>
-            <h3>Agua</h3>
-            <p>Agua mineral 500ml</p>
-            <p>R$5</p>
+            <h3>Água Sem Gás</h3>
+            <p>Garrafa descartável de água sem gás com 500 ml.</p>
+            <p><strong>R$ 8,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/refri.png" alt="Refri" />
-              <figcaption>Bebidas</figcaption>
+              <img src="./Assets/Img/refri.png"/>
+              <figcaption>Bebida</figcaption>
             </figure>
-            <h3>Refrigerante</h3>
-            <p>Refrigerante 500ml</p>
-            <p>R$5</p>
+            <h3>Refrigerante 300 ml</h3>
+            <p>Copo de refrigerante de 300 ml.</p>
+            <p><strong>R$ 10,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/chopp.png" alt="Chopp" />
-              <figcaption>Bebidas</figcaption>
+              <img src="./Assets/Img/chopp.png"/>
+              <figcaption>Bebida</figcaption>
             </figure>
-            <h3>Chopp</h3>
-            <p>Chopp 500ml</p>
-            <p>R$10</p>
+            <h3>Chopp 300 ml</h3>
+            <p>Caneca de 300 ml do nosso chopp pilsen geladíssimo.</p>
+            <p><strong>R$ 15,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/petit-gateau.png" alt="Petit Gâteau" />
-              <figcaption>Sobremesas</figcaption>
+              <img src="./Assets/Img/petit-gateau.png"/>
+              <figcaption>Sobremesa</figcaption>
             </figure>
-            <h3>Petit Gâteau</h3>
-            <p>Petit Gâteau de chocolate</p>
-            <p>R$10</p>
+            <h3>Petit Gateau</h3>
+            <p>Petit Gateau com uma bola de sorvete de creme.</p>
+            <p><strong>R$ 25,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
 
           <article>
             <figure>
-              <img src="./assets/img/mousse-maracuja.png" alt="Mousse de Maracujá" />
-              <figcaption>Sobremesas</figcaption>
+              <img src="./Assets/Img/mousse-maracuja.png"/>
+              <figcaption>Sobremesa</figcaption>
             </figure>
             <h3>Mousse de Maracujá</h3>
-            <p>Mousse de maracujá com cobertura de chocolate</p>
-            <p>R$12</p>
+            <p>Mousse de maracujá feito com a fruta de verdade.</p>
+            <p><strong>R$ 18,00</strong></p>
             <button type="button">Adicionar</button>
           </article>
-
-
-
         </section>
 
-
         <aside>
-          <h2>seu pedido</h2>
-
+          <h2>Seu pedido</h2>
           <div className="cart-empty">
-            <img src="./assets/img/cart.svg" alt="Carrinho Vazio" />
+            <img src="./assets/img/cart.svg" />
             <p>Seu carrinho está vazio</p>
-            <p>escolha um item do carrinho para começar</p>
-
+            <p>Escolha um item do cardápio para começar</p>
           </div>
         </aside>
       </main>
 
-      <footer>
-        <div className="container">
-          <p>Cardápio digital - Desenvolvimento de aplicações web</p>
-          <p>Rua Mato Grosso, 200 - Pato Branco - PR</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
